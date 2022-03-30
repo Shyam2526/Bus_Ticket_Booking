@@ -13,7 +13,7 @@ char name[30],pass[30];
 void reg()
   {
     FILE *fp;
-    char c,checker[30]; 
+    char checker[30]; 
     static int z=0;
     if(fp == NULL){
       fp=fopen("Web_reg.txt", "w");
@@ -30,7 +30,7 @@ void reg()
     for(i=0;i<100;i++)
     {
       printf("\n\n\t\t\t\t  ENTER USERNAME: ");
-      scanf("%s",checker);
+      scanf("%30s",checker);
       while(!feof(fp) )
     	{ 
         if(strcmp(checker,w.name) == 0)
@@ -52,12 +52,8 @@ void reg()
         }
       fprintf(fp,"\t%s %s\n", w.name, w.pass);
       fclose(fp);
-      printf("\n\n\tPress enter if you agree with Username and Password");
-      if((c=getch())==13)
-        {
-        printf("\n\n\t\tYou are successfully registered");
-        login();
-        }
+      printf("SUCCESSFULLY REGISTERED");
+      login();
         break;
       }
     getch();
@@ -67,7 +63,6 @@ void login()
   FILE *fp;
   char c,name[30],pass[30]; int z=0;
   int checku,checkp;
-  
   fp=fopen("Web_reg.txt", "r+");
   if(fp == NULL)
   {
@@ -79,10 +74,10 @@ void login()
     printf("\n\n\t\t\t\tWELCOME TO LOG IN ZONE");
     printf("\n\t\t\t\t^^^^^^^^^^^^^^^^^^^^^^");
     printf("\n\n\t\t\t\t  ENTER USERNAME: ");
-    scanf("%s",name);
+    scanf("%30s",name);
     while( (c = fgetc(fp)) != EOF)
     {
-      fscanf(fp,"%s %s",w.name,w.pass);
+      fscanf(fp,"%30s %30s",w.name,w.pass);
       if(strcmp(w.name, name) == 0)
       {
         checku=0;
