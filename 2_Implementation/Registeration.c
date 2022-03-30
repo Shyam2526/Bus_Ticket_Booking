@@ -8,12 +8,12 @@ int ch;
 char x;
 struct detail
 {
-char name[30],pass[30];
+char name,pass;
 }w;
 void reg()
   {
     FILE *fp;
-    char checker[30]; 
+    char checker; 
     static int z=0;
     if(fp == NULL){
       fp=fopen("Web_reg.txt", "w");
@@ -61,7 +61,7 @@ void reg()
 void login()
 {
   FILE *fp;
-  char c,name[30],pass[30]; int z=0;
+  char c,name,pass; int z=0;
   int checku,checkp;
   fp=fopen("Web_reg.txt", "r+");
   if(fp == NULL)
