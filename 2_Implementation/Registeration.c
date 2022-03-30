@@ -31,7 +31,7 @@ void reg(){
     printf("\n\t\t\t\t^^^^^^^^^^^^^^^^^^^^^^^^^^^^^");
     for(i=0;i<100;i++){
       printf("\n\n\t\t\t\t  ENTER USERNAME: ");
-      scanf("%30s",checker);
+      scanf("%29s",checker);
       while(!feof(fp) ){ 
         if(strcmp(checker,w.name) == 0){
           printf("\n\n\t\t\tUSERNAME ALREDY EXISTS");
@@ -65,9 +65,9 @@ void login(){
   else{
     printf("\n\t\t\t\t^^^^^^^^^^^^^^^^^^^^^^\n\n\t\t\t\tWELCOME TO LOG IN ZONE\n\t\t\t\t^^^^^^^^^^^^^^^^^^^^^^");
     printf("\n\n\t\t\t\t  ENTER USERNAME: ");
-    scanf("%30s",uname);
+    scanf("%29s",uname);
     while( (c = fgetc(fp)) != EOF){
-      fscanf(fp,"%30s %30s",w.name,w.pass);
+      fscanf(fp,"%29s %29s",w.name,w.pass);
       if(strcmp(w.name, uname) == 0){
         checku=0;
         printf("\n\n\t\t\t\t  ENTER PASSWORD: ");
