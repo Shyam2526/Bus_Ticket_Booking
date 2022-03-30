@@ -4,17 +4,17 @@
 #include<conio.h>
 #include "header.h"
 int i=0;
-char checker[20]; 
+char checker[30]; 
 static int z=0;
 int ch;
 char x;
 char c;
-char uname[20], upass[20]; 
+char uname[30], upass[20]; 
 int e=0;
 int checku,checkp;
 struct detail
 {
-char name[20],pass[20];
+char name[30],pass[20];
 }w;
 void reg(){
     FILE *fp;
@@ -94,5 +94,4 @@ else if(checku!=0){
   printf("\n\n\n\t\t\tYou are not a Registered User\n \t\t\tPress enter to register yourself");
   if(getch()==13)
     reg();
-}
-}
+}}
