@@ -8,8 +8,9 @@
 int n;
 static int count=0;
 int ch;
-char bus_code[20];
-char name[20], mobile[10];
+char u;
+char bus_code[21];
+char name[21], mobile[11];
 int  total_amount=0;
 int main(void)
 {
@@ -20,14 +21,11 @@ printf("\n\t\t\t===========================");
 call();
 return 0;
 }
-void call(){
-  XY:
-printf("\n\n\n\t\t\t1. LOGIN\n\t\t\t2. REGISTER\n\t\t\t3. ADMIN\n\t\t\t4. Exit");
-printf("\n\n\n\t\t\tENTER YOUR CHOICE: ");
+void call(){XY:
+printf("\n\n\n\t\t\t1. LOGIN\n\t\t\t2. REGISTER\n\t\t\t3. ADMIN\n\t\t\t4. Exit\n\n\n\t\t\tENTER YOUR CHOICE: ");
 scanf("%d",&n);
 switch(n)
-  {
-    case 1: 
+  { case 1: 
         login();
         break;
     case 2: 
@@ -39,38 +37,33 @@ switch(n)
     case 4:
         exit(0);
         break;
-    default: printf("\n\n\t\t\t\tNO MATCH FOUND");
-        printf("\n\n\t\t\tPress Enter to re-Enter the choice");
+    default: printf("\n\n\t\t\t\tNO MATCH FOUND\n\n\t\t\tPress Enter to re-Enter the choice");
         if(getch()==13)
-        goto XY;
+        	goto XY;
   }
- do{	
-printf("\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n\t\t\tBus Ticket booking\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
-printf("\n\t\t\tEnter >1< To Book Ticket");
-  printf("\n\t\t\tEnter >2< To View All Route");
-  printf("\n\t\t\tEnter >0< Go To Main Menu");
-  printf("\n\t\t\tEnter your Choice ::");
+ do{	printf("\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n\t\t\tBus Ticket booking\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+	printf("\n\t\t\tEnter >1< To Book Ticket");
+  	printf("\n\t\t\tEnter >2< To View All Route");
+  	printf("\n\t\t\tEnter >0< Go To Main Menu");
+  	printf("\n\t\t\tEnter your Choice ::");
    	scanf("%d",&ch); 
 	  switch(ch){
-    case 1 :
+    	case 1 :
     		ticket_booking();
-   		  break;
-		case 2:
+   		break;
+	case 2:
     		viewAll_route();
-   		  break;		
-    case 0:
-    		main();
+   		break;		
+    	case 0:
+    		call();
     		break;
-    default:
+    	default:
     		printf("\n\t\tWrong choice !");
     		break;
-    }   
- }while(ch!=0);
-}
+    }}while(ch!=0);}
 void viewAll_route()
 {
   FILE *fp;
-  char u;
   fp=fopen("project.txt", "r");
   if(fp == NULL)
   {
