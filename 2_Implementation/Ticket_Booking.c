@@ -8,9 +8,9 @@
 int g=0;
 int n;
 static int count=0;
-char ch;
+int ch;
 char bus_code;
-char name, mobile;
+char name, *mobile;
 int  total_amount=0;
 int main()
 {
@@ -89,67 +89,49 @@ void viewAll_route()
   getch();
   system("cls");
 }
-void ticket_booking()
-{
-  FILE *fp;
-  fp=fopen("project.txt", "r");
-  if(fp == NULL)
-  {
-	  printf("\t\t\tfile does not found !");
-    exit(1);
-  }
-  else
-  {	
-    system("cls");
+void ticket_booking(){
+  FILE *fp=fopen("project.txt", "r");
+  if(fp == NULL){
+	printf("\t\t\tfile does not found !");
+    	exit(1);}
+  else{	
     while( ( ch = fgetc(fp) ) != EOF )
-   		printf("%c",ch);
-  }
+   		printf("%c",ch);}
   fclose(fp);
-  printf("\n\n\n\t\t For Book ticket Choice Route\n");
-  printf("\n\t\t Enter Route code :");
+  printf("\n\n\n\t\t For Book ticket Choice Route\n\n\t\t Enter Route code :");
   scanf("%20s",bus_code);
 	system("cls");
   fp=fopen("project.txt", "r");
-  if(fp == NULL)
-  {
+  if(fp == NULL){
     printf("\t\t\tfile does not found !");
-    exit(1);
-  } 
-  else
-  {	
-    while(getc(fp) != EOF)
-    {
+    exit(1);} 
+  else{	
+    while(getc(fp) != EOF){
 	    fscanf(fp,"%20s %20s %20s %d",bu.code,bu.pp,bu.des,&bu.cost);
-	    if(strcmp(bu.code,bus_code) == 0)
-	    {	
-		    printf("\n Choice Found\n");
-		    printf("\n\t\tRoute Code ::%s",bu.code);
-		    printf("\n\t\tDepature Place ::%s",bu.pp);
-		    printf("\n\t\tArrival Place ::%s",bu.des);
-		    printf("\n\t\tPrice of ticket::%d",bu.cost);
-        break;
-  		}
-    }
-	}
+	    if(strcmp(bu.code,bus_code) == 0){	
+		    printf("\n Choice Found\n\n\t\tRoute Code ::%s\n\t\tDepature Place ::%s\n\t\tArrival Place ::%s\n\t\tPrice of ticket::%d",bu.code,bu.pp,bu.des,bu.cost);
+		    break;}}}
   printf("\n\n\n* Person Deatails  *");
 	printf("\n\t\t your name :");
 	scanf("%20s",name);
   x:
 	printf("\n\t\t mobile number :");
-	scanf("%11s",mobile);
+	scanf("%20s",mobile);
   if(strlen(mobile)==10){
     for(int j=0; j<10; j++){
       if(!(mobile[j]>='0' && mobile[j]<='9')){
         printf("INVALID MOBILE NUMBER");
-        goto x;
-      }
-    }
-  }
+        goto x;}}}
   else{
     printf("Enter Valid Mobile Number");
-    goto x;
-  }
-  int sr;
+    goto x;}
+	fclose(fp);
+  getch();
+  system("cls");
+}
+void buses(){
+	int sr;
+	FILE *sfp;
   printf("\n\t\t<1>\tAC BUS");
   printf("\n\t\t<2>\tSLEEPER COACH");
   printf("\n\t\t<3>\tSEATER\n\t\tENTER YOUR CHOICE :: ");
@@ -166,30 +148,18 @@ void ticket_booking()
       break;
     default:
       printf("\n\t\tWRONG OPTION");
-      break;
-  }
-	printf("\n\t\tTOTAL AMOUNT :: %d", total_amount);
-	printf("\n\n\n\t\t ENJOY YOUR JOURNEY %s\n", name);
-  FILE *sfp;
+      break;}
+	printf("\n\t\tTOTAL AMOUNT :: %d\n\n\n\t\t ENJOY YOUR JOURNEY %s\n", total_amount, name);
   sfp=fopen("histroy.txt", "a");
-  if(sfp == NULL)
-	{
-		printf("FIle not Found");
-	}
-	else
-	{
+  if(sfp == NULL){
+		printf("FIle not Found");}
+	else{
 		fprintf(sfp,"\nNAME ::%s\nMOBILE_NUMBER ::%s\nTOTAL_SEAT ::%d\nTOTAL_AMOUONT ::%d\nBUS CODE ::%s\nPRICE PER TICKET ::%d\n",name,mobile,bu.total_seat,total_amount,bu.code, bu.cost);
 		for(int k=0; k<bu.total_seat; k++){
-      fprintf(sfp,"Seat Number :: ");
-      fprintf(sfp, "%d\n", bu.seat_no[k]);
-    }
-    printf("\n\t\tRoutes insert Sucessfull to the Histroy file");
-	}
-  printf("\n");
+      fprintf(sfp,"Seat Number :: %d\n", bu.seat_no[k]););
+    printf("\n\t\tRoutes insert Sucessfull to the Histroy file\n");}
 	fclose(sfp);
-  fclose(fp);
-  getch();
-  system("cls");
+	}
 }
 int ac(){
   printf("\nAVALIABLE SEATS ::%d", 30-count);
