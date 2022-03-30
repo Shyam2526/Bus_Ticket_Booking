@@ -4,11 +4,11 @@
 #include<conio.h>
 #include "header.h"
 struct bus{
-  char code[20];
-  char pp[20];
-  char des[20];
+  char code[21];
+  char pp[21];
+  char des[21];
   int cost;
-  int seat_no[20];
+  int seat_no[30];
   int total_seat;
 }bu;
 int a=0;
