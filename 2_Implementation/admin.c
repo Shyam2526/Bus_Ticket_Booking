@@ -4,31 +4,28 @@
 #include<conio.h>
 #include "header.h"
 struct bus{
-  char code[20];
-  char pp[20];
-  char des[20];
+  char code;
+  char pp;
+  char des;
   int cost;
-  int seat_no[20];
+  int seat_no;
   int total_seat;
 }bu;
 int a=0;
-char p;
+char p,m;
 void admin(){
   int s;
   printf("\n\t\t\tONLY FOR ADMIN USERS\n");
   printf("\n\t\t\tEnter UserName\n\t\t\t");
-  scanf("%s", ad_user);
-  if(strcmp("shyam",ad_user)==0)
-  {
+  scanf("%20s", ad_user);
+  if(strcmp("shyam",ad_user)==0){
     printf("\n\t\t\tENTER PASSWORD\n\t\t\t");
-    while((p=getch())!=13)
-        {
+    while((p=getch())!=13){
           ad_pass[a++]=p;
           printf("%c",'*');
         }
 
-    if(strcmp("ram",ad_pass)==0)
-    {
+    if(strcmp("ram",ad_pass)==0){
       z:
       system("cls");
       printf("\n\t\t\tEnter >1< To View Passengers History ");
@@ -69,19 +66,17 @@ void insect_route()
   }
   b:
   printf("\n\t\tEnter the Route Code\n\t\t");
-  scanf("%s",bu.code);
+  scanf("%20s",bu.code);
   printf("\n\t\tEnter the departure place\n\t\t");
-  scanf("%s", bu.pp);
+  scanf("%20s", bu.pp);
   printf("\n\t\tEnter the arriving place\n\t\t");
-  scanf("%s", bu.des);
+  scanf("%20s", bu.des);
   printf("\n\t\tEnter the Ticket Price\n\t\t");
   scanf("\t\t%d", &bu.cost);
-  if(log == NULL)
-  {
+  if(log == NULL){
     printf("FIle not Found");
 	}
-	else
-	{
+	else{
 	  fprintf(log, "%s %s %s %d \n", bu.code, bu.pp, bu.des, bu.cost);
 	  printf("Recorded Successfully");
 	}
@@ -91,7 +86,6 @@ void insect_route()
 	system("cls");
 }
 void travel_histroy(){
-  char ch;
 	FILE *fp;
   system("clear");
 	fp = fopen("histroy.txt","r");
@@ -103,8 +97,8 @@ void travel_histroy(){
 	else
 	{	
 		system("cls");
-		while( ( ch = fgetc(fp) ) != EOF )
-   		printf("%c",ch);
+		while( ( m = fgetc(fp) ) != EOF )
+   		printf("%c",m);
 	}
 	fclose(fp);
   getch();
