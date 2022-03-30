@@ -8,9 +8,12 @@
 int g=0;
 int n;
 static int count=0;
+char ch;
+char bus_code;
+char name, mobile;
+int  total_amount=0;
 int main()
 {
-int s;
 if(g == 0){
 printf("\n\t\t\t===========================");
 printf("\n\t\t\tWELCOME TO THE HOLIDAYS BUS");
@@ -68,9 +71,8 @@ printf("\n\t\t\tEnter >1< To Book Ticket");
 
 void viewAll_route()
 {
-  char ch;
   FILE *fp;
-  FILE *ufp;
+  char u;
   fp=fopen("project.txt", "r");
   if(fp == NULL)
   {
@@ -80,8 +82,8 @@ void viewAll_route()
   else
   {	
     system("cls");
-	  while( ( ch = fgetc(fp) ) != EOF )
-    	printf("%c",ch);
+	  while( ( u = fgetc(fp) ) != EOF )
+    	printf("%c",u);
   }
   fclose(fp);
   getch();
@@ -89,10 +91,6 @@ void viewAll_route()
 }
 void ticket_booking()
 {
-  char ch;
-  char bus_code[20];
-  char name[20], mobile[15];
-  int  total_amount=0;
   FILE *fp;
   fp=fopen("project.txt", "r");
   if(fp == NULL)
@@ -109,7 +107,7 @@ void ticket_booking()
   fclose(fp);
   printf("\n\n\n\t\t For Book ticket Choice Route\n");
   printf("\n\t\t Enter Route code :");
-  scanf("%s",bus_code);
+  scanf("%20s",bus_code);
 	system("cls");
   fp=fopen("project.txt", "r");
   if(fp == NULL)
@@ -121,7 +119,7 @@ void ticket_booking()
   {	
     while(getc(fp) != EOF)
     {
-	    fscanf(fp,"%s %s %s %d",bu.code,bu.pp,bu.des,&bu.cost);
+	    fscanf(fp,"%20s %20s %20s %d",bu.code,bu.pp,bu.des,&bu.cost);
 	    if(strcmp(bu.code,bus_code) == 0)
 	    {	
 		    printf("\n Choice Found\n");
@@ -135,10 +133,10 @@ void ticket_booking()
 	}
   printf("\n\n\n* Person Deatails  *");
 	printf("\n\t\t your name :");
-	scanf("%s",name);
+	scanf("%20s",name);
   x:
 	printf("\n\t\t mobile number :");
-	scanf("%s",mobile);
+	scanf("%11s",mobile);
   if(strlen(mobile)==10){
     for(int j=0; j<10; j++){
       if(!(mobile[j]>='0' && mobile[j]<='9')){
