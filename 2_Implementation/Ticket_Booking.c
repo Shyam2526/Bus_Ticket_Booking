@@ -41,7 +41,28 @@ switch(n)
         if(getch()==13)
         goto XY;
   }
-  system("cls"); 
+ do{	
+printf("\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n\t\t\tBus Ticket booking\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+printf("\n\t\t\tEnter >1< To Book Ticket");
+  printf("\n\t\t\tEnter >2< To View All Route");
+  printf("\n\t\t\tEnter >0< Go To Main Menu");
+  printf("\n\t\t\tEnter your Choice ::");
+   	scanf("%d",&ch); 
+	  switch(ch){
+    case 1 :
+    		ticket_booking();
+   		  break;
+		case 2:
+    		viewAll_route();
+   		  break;		
+    case 0:
+    		main();
+    		break;
+    default:
+    		printf("\n\t\tWrong choice !");
+    		break;
+    }   
+ }while(ch!=0); 
   return 0;
 }
 
@@ -53,7 +74,7 @@ void viewAll_route()
   fp=fopen("project.txt", "r");
   if(fp == NULL)
   {
- 	  printf("\t\t\tfile does not found !");
+    printf("\t\t\tfile does not found !");
     exit(1);
   }
   else
