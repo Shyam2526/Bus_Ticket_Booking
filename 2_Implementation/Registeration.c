@@ -25,8 +25,7 @@ void reg(){
     else{
       fp=fopen("Web_reg.txt", "a");
       goto a;
-    }
-    a:
+    }a:
     printf("\n\t\t\t\t^^^^^^^^^^^^^^^^^^^^^^^^^^^^^");
     printf("\n\t\t\t\tWELCOME TO THE REGISTERATION");
     printf("\n\t\t\t\t^^^^^^^^^^^^^^^^^^^^^^^^^^^^^");
