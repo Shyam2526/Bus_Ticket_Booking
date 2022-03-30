@@ -9,4 +9,4 @@ int seater();
 int sleeper();
 void admin();
 void call();
-char ad_user[20], ad_pass[20];
+char ad_user[21], ad_pass[21];
