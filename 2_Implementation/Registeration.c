@@ -80,10 +80,7 @@ void login(){
           pass[e]='\0';
           printf("%s", w.pass);
           checkp=strcmp(w.pass,pass);
-          break;
-        }
-      }
-  }
+          break;}}}
 if(checku==0&&checkp==0){
   printf("\n\n\n\t\t\t\tYOU HAVE LOGGED IN SUCCESSFULLY!!");
   printf("\n\n\n\t\t\t\tWELCOME, HAVE A NICE DAY");
@@ -100,5 +97,4 @@ else if(checku!=0){
   if(getch()==13)
     reg();
 }
-getch();
-}
+getch();}
