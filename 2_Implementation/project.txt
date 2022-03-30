@@ -12,3 +12,4 @@
 12 cuddalore kanchipuram 500 
 13 chennai kanniyakumari 725 
 14 poonamallee vada_palani 250 
+15 kanchipuram aavadi 50 

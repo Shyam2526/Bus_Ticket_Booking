@@ -4,11 +4,11 @@
 #include<conio.h>
 #include "header.h"
 struct bus{
-  char code;
-  char pp;
-  char des;
+  char code[20];
+  char pp[20];
+  char des[20];
   int cost;
-  int seat_no;
+  int seat_no[20];
   int total_seat;
 }bu;
 int a=0;
@@ -43,7 +43,7 @@ void admin(){
         goto z;
 		    break;
         case 0:
-    		main();
+    		call();
     		break;
         default:
         printf("WRONG CHOICE");

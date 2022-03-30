@@ -8,4 +8,5 @@ int ac();
 int seater();
 int sleeper();
 void admin();
-char ad_user[20],ad_pass[20];
+void call();
+char ad_user[20], ad_pass[20];

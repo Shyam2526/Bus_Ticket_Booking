@@ -3,14 +3,18 @@
 #include<string.h>
 #include<conio.h>
 #include "header.h"
-static int i=0;
-char checker; 
+int i=0;
+char checker[20]; 
 static int z=0;
 int ch;
 char x;
+char c;
+char uname[20], upass[20]; 
+int e=0;
+int checku,checkp;
 struct detail
 {
-char name,pass;
+char name[20],pass[20];
 }w;
 void reg(){
     FILE *fp;
@@ -24,7 +28,7 @@ void reg(){
     }
     a:
     printf("\n\t\t\t\t^^^^^^^^^^^^^^^^^^^^^^^^^^^^^");
-    printf("\n\n\t\t\t\tWELCOME TO THE REGISTERATION");
+    printf("\n\t\t\t\tWELCOME TO THE REGISTERATION");
     printf("\n\t\t\t\t^^^^^^^^^^^^^^^^^^^^^^^^^^^^^");
     for(i=0;i<100;i++){
       printf("\n\n\t\t\t\t  ENTER USERNAME: ");
@@ -46,17 +50,12 @@ void reg(){
         }
       fprintf(fp,"\t%s %s\n", w.name, w.pass);
       fclose(fp);
-      printf("SUCCESSFULLY REGISTERED");
+      printf("\n\t\t\tSUCCESSFULLY REGISTERED");
       login();
         break;
-      }
+      }system("cls");
     getch();
   }
-
-char c, name, pass; 
-int e=0;
-int checku,checkp;
-
 void login(){
   FILE *fp;
   fp=fopen("Web_reg.txt", "r+");
@@ -67,19 +66,19 @@ void login(){
   else{
     printf("\n\t\t\t\t^^^^^^^^^^^^^^^^^^^^^^\n\n\t\t\t\tWELCOME TO LOG IN ZONE\n\t\t\t\t^^^^^^^^^^^^^^^^^^^^^^");
     printf("\n\n\t\t\t\t  ENTER USERNAME: ");
-    scanf("%30s",name);
+    scanf("%30s",uname);
     while( (c = fgetc(fp)) != EOF){
       fscanf(fp,"%30s %30s",w.name,w.pass);
-      if(strcmp(w.name, name) == 0){
+      if(strcmp(w.name, uname) == 0){
         checku=0;
         printf("\n\n\t\t\t\t  ENTER PASSWORD: ");
         while((c=getch())!=13){
-          pass[e++]=c;
+          upass[e++]=c;
           printf("%c",'*');
         }
-          pass[e]='\0';
+          upass[e]='\0';
           printf("%s", w.pass);
-          checkp=strcmp(w.pass,pass);
+          checkp=strcmp(w.pass,upass);
           break;}}}
 if(checku==0&&checkp==0){
   printf("\n\n\n\t\t\t\tYOU HAVE LOGGED IN SUCCESSFULLY!!");
@@ -87,7 +86,7 @@ if(checku==0&&checkp==0){
   system("cls");
 }
 else if(checku==0&&checkp!=0){
-  printf("\n\n\n\t\t\tWRONG PASSWORD!! Not %s??",name);
+  printf("\n\n\n\t\t\tWRONG PASSWORD!! Not %s??",uname);
   printf("\n\n\t\t\t\t  (Press 'y' to re-enter password)");
   getch();
   login();
@@ -97,4 +96,4 @@ else if(checku!=0){
   if(getch()==13)
     reg();
 }
-getch();}
+}

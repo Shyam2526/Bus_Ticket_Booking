@@ -73,3 +73,22 @@ BUS CODE ::11
 PRICE PER TICKET ::555
 Seat Number :: 2
 Seat Number :: 3
+
+NAME ::chitra
+MOBILE_NUMBER ::8965231474
+TOTAL_SEAT ::2
+TOTAL_AMOUONT ::200
+BUS CODE ::4
+PRICE PER TICKET ::0
+Seat Number :: 2
+Seat Number :: 3
+
+NAME ::saranaya
+MOBILE_NUMBER ::9632587412
+TOTAL_SEAT ::3
+TOTAL_AMOUONT ::100
+BUS CODE ::5
+PRICE PER TICKET ::0
+Seat Number :: 4
+Seat Number :: 5
+Seat Number :: 6

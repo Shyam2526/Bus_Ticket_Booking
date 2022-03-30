@@ -5,23 +5,23 @@
 #include "header.h"
 #include "Registeration.c"
 #include "admin.c"
-int g=0;
 int n;
 static int count=0;
 int ch;
-char bus_code;
-char name, *mobile;
+char bus_code[20];
+char name[20], mobile[10];
 int  total_amount=0;
-int main()
+int main(void)
 {
-if(g == 0){
 printf("\n\t\t\t===========================");
 printf("\n\t\t\tWELCOME TO THE HOLIDAYS BUS");
 printf("\n\t\t\t===========================");
 //printf("\n\n\n\t\t\tPress Enter to proceed...!!");
-g++;
+call();
+return 0;
 }
-XY:
+void call(){
+  XY:
 printf("\n\n\n\t\t\t1. LOGIN\n\t\t\t2. REGISTER\n\t\t\t3. ADMIN\n\t\t\t4. Exit");
 printf("\n\n\n\t\t\tENTER YOUR CHOICE: ");
 scanf("%d",&n);
@@ -65,10 +65,8 @@ printf("\n\t\t\tEnter >1< To Book Ticket");
     		printf("\n\t\tWrong choice !");
     		break;
     }   
- }while(ch!=0); 
-  return 0;
+ }while(ch!=0);
 }
-
 void viewAll_route()
 {
   FILE *fp;
@@ -116,7 +114,7 @@ void ticket_booking(){
 	scanf("%20s",name);
   x:
 	printf("\n\t\t mobile number :");
-	scanf("%20s",mobile);
+	scanf("%10s",mobile);
   if(strlen(mobile)==10){
     for(int j=0; j<10; j++){
       if(!(mobile[j]>='0' && mobile[j]<='9')){
@@ -126,8 +124,8 @@ void ticket_booking(){
     printf("Enter Valid Mobile Number");
     goto x;}
 	fclose(fp);
-  getch();
   system("cls");
+  buses();
 }
 void buses(){
 	int sr;
@@ -155,10 +153,11 @@ void buses(){
 		printf("FIle not Found");}
 	else{
 		fprintf(sfp,"\nNAME ::%s\nMOBILE_NUMBER ::%s\nTOTAL_SEAT ::%d\nTOTAL_AMOUONT ::%d\nBUS CODE ::%s\nPRICE PER TICKET ::%d\n",name,mobile,bu.total_seat,total_amount,bu.code, bu.cost);
-		for(int k=0; k<bu.total_seat; k++){
-      fprintf(sfp,"Seat Number :: %d\n", bu.seat_no[k]););
-    printf("\n\t\tRoutes insert Sucessfull to the Histroy file\n");}
+		for(int k=0; k<bu.total_seat; k++)
+      fprintf(sfp,"Seat Number :: %d\n", bu.seat_no[k]);
+    printf("\n\t\tRoutes insert Sucessfull to the Histroy file\n");
 	fclose(sfp);
+  system("cls");
 	}
 }
 int ac(){
