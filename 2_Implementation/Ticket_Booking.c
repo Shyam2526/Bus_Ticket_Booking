@@ -213,7 +213,6 @@ int seater(){
         goto c;
       }
       count++;
-      
     }
   }
   return bu.total_seat*bu.cost;
