@@ -1,23 +1,17 @@
 #include<stdio.h>
 #include<stdlib.h>
 #include<string.h>
+//#include<conio.h>
 #include "header.h"
 struct bus{
-<<<<<<< HEAD
   char code[20];
   char pp[20];
   char des[20];
   int cost;
   int seat_no[20];
-=======
-  char code[21];
-  char pp[21];
-  char des[21];
-  int cost;
-  int seat_no[30];
->>>>>>> f2e73cbd0d2868887541c2fdc01b2cb4cdc2687a
   int total_seat;
 }bu;
+int a=0;
 char p,m;
 void admin(){
   int s;
@@ -27,7 +21,6 @@ void admin(){
   if(strcmp("shyam",ad_user)==0){
     printf("\n\t\t\tENTER PASSWORD\n\t\t\t");
     while(p!=13){
-          int a=0;
           ad_pass[a++]=p;
           printf("%c",'*');
         }

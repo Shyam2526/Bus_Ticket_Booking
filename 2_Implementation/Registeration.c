@@ -1,33 +1,21 @@
 #include<stdio.h>
 #include<stdlib.h>
 #include<string.h>
+//#include<conio.h>
 #include "header.h"
-<<<<<<< HEAD
 char checker[20]; 
-=======
-int i=0;
-char checker[30]; 
->>>>>>> f2e73cbd0d2868887541c2fdc01b2cb4cdc2687a
 static int z=0;
 int ch;
 char x;
 char c;
-<<<<<<< HEAD
 char uname[20], upass[20]; 
 int checku,checkp;
 struct detail
 {
 char name[20],pass[20];
-=======
-char uname[30], upass[20]; 
-int e=0;
-int checku,checkp;
-struct detail
-{
-char name[30],pass[20];
->>>>>>> f2e73cbd0d2868887541c2fdc01b2cb4cdc2687a
 }w;
-void registers(){
+void reg(){
+  int i=0;
     FILE *fp;
     if(fp == NULL){
       fp=fopen("Web_reg.txt", "w");
@@ -36,17 +24,18 @@ void registers(){
     else{
       fp=fopen("Web_reg.txt", "a");
       goto a;
-    }a:
+    }
+    a:
     printf("\n\t\t\t\t^^^^^^^^^^^^^^^^^^^^^^^^^^^^^");
     printf("\n\t\t\t\tWELCOME TO THE REGISTERATION");
     printf("\n\t\t\t\t^^^^^^^^^^^^^^^^^^^^^^^^^^^^^");
-    for(int b=0;b<100;b++){
+    for(i;i<100;i++){
       printf("\n\n\t\t\t\t  ENTER USERNAME: ");
-      scanf("%29s",checker);
+      scanf("%30s",checker);
       while(!feof(fp) ){ 
         if(strcmp(checker,w.name) == 0){
           printf("\n\n\t\t\tUSERNAME ALREDY EXISTS");
-          registers();
+          reg();
         }
         else{
           strcpy(w.name,checker);
@@ -64,10 +53,6 @@ void registers(){
       login();
         break;
       }system("cls");
-<<<<<<< HEAD
-=======
-    getch();
->>>>>>> f2e73cbd0d2868887541c2fdc01b2cb4cdc2687a
   }
 void login(){
   FILE *fp;
@@ -80,7 +65,6 @@ void login(){
   else{
     printf("\n\t\t\t\t^^^^^^^^^^^^^^^^^^^^^^\n\t\t\t\tWELCOME TO LOG IN ZONE\n\t\t\t\t^^^^^^^^^^^^^^^^^^^^^^");
     printf("\n\n\t\t\t\t  ENTER USERNAME: ");
-<<<<<<< HEAD
     scanf("%30s",uname);
     while( (c = fgetc(fp)) != EOF){
       fscanf(fp,"%30s %30s",w.name,w.pass);
@@ -88,15 +72,6 @@ void login(){
         checku=0;
         printf("\n\n\t\t\t\t  ENTER PASSWORD: ");
         while(c!=13){
-=======
-    scanf("%29s",uname);
-    while( (c = fgetc(fp)) != EOF){
-      fscanf(fp,"%29s %29s",w.name,w.pass);
-      if(strcmp(w.name, uname) == 0){
-        checku=0;
-        printf("\n\n\t\t\t\t  ENTER PASSWORD: ");
-        while((c=getch())!=13){
->>>>>>> f2e73cbd0d2868887541c2fdc01b2cb4cdc2687a
           upass[e++]=c;
           printf("%c",'*');
         }
@@ -117,13 +92,7 @@ else if(checku==0&&checkp!=0){
 }
 else if(checku!=0){
   printf("\n\n\n\t\t\tYou are not a Registered User\n \t\t\tPress enter to register yourself");
-<<<<<<< HEAD
   //if(getch()==13)
-  registers();
-}
-}
-=======
-  if(getch()==13)
     reg();
-}}
->>>>>>> f2e73cbd0d2868887541c2fdc01b2cb4cdc2687a
+}
+}
