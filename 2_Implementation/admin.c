@@ -11,10 +11,9 @@ struct bus{
   int seat_no[20];
   int total_seat;
 }bu;
-int a=0;
 char p,m;
 void admin(){
-  int s;
+  int s, a=0;
   printf("\n\t\t\tONLY FOR ADMIN USERS\n");
   printf("\n\t\t\tEnter UserName\n\t\t\t");
   scanf("%20s", ad_user);
