@@ -8,4 +8,7 @@ int seater();
 int sleeper();
 void call();
 void buses();
+void FindRoute();
+char Arrival(char *pp);
+char Depature(char *des);
 char ad_user[20], ad_pass[20];

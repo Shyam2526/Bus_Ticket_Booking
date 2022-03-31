@@ -215,3 +215,46 @@ int seater(){
   }
   return bu.total_seat*bu.cost;
 }
+void FindRoute(){
+  int sh;
+  char bc[20], bc1[20];
+  char pp[20], des[20];
+  FILE *fp=fopen("project.txt", "r");
+  printf("\n\t\t1. Find By Arrival Place\n\t\t2. Find By Depature Place");
+      switch(sh){
+        case 1:
+          printf("\n\t\tENTER THE ARRIVAL PLACE\n\t\t");
+          scanf("%s", pp);
+          bc=Arrival(pp);
+          break;
+        case 2:
+          printf("\n\t\tENTER THE DEPATURE PLACE\n\t\t");
+          scanf("%s", des);
+          bc1=Depature(des);
+          break;
+        default:
+          printf("\nWrong Choice");
+      }
+      while(getc(fp) != EOF){
+	    fscanf(fp,"%20s %20s %20s %d",bu.code,bu.pp,bu.des,&bu.cost);
+      if(strcmp(bu.code, bc)==0)
+        printf("\n Choice Found\n\n\t\tRoute Code ::%s\n\t\tDepature Place ::%s\n\t\tArrival Place ::%s\n\t\tPrice of ticket::%d",bu.code,bu.pp,bu.des,bu.cost);
+		    break;
+  }
+}
+char Arrival(char *pp){
+    FILE *fp=fopen("project.txt", "r");
+    while(getc(fp) != EOF){
+	    fscanf(fp,"%20s %20s %20s %d",bu.code,bu.pp,bu.des,&bu.cost);
+      if(strcmp(bu.pp,pp)==0)
+        return *pp;
+}
+}
+char Depature(char *des){
+  FILE *fp=fopen("project.txt", "r");
+    while(getc(fp) != EOF){
+	    fscanf(fp,"%20s %20s %20s %d",bu.code,bu.pp,bu.des,&bu.cost);
+      if(strcmp(bu.des,des)==0)
+        return *des;
+}
+}
