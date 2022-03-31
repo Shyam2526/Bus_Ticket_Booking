@@ -1,7 +1,6 @@
 #include<stdio.h>
 #include<stdlib.h>
 #include<string.h>
-#include<conio.h>
 #include "header.h"
 struct bus{
   char code[20];
@@ -11,7 +10,6 @@ struct bus{
   int seat_no[20];
   int total_seat;
 }bu;
-int a=0;
 char p,m;
 void admin(){
   int s;
@@ -20,7 +18,8 @@ void admin(){
   scanf("%20s", ad_user);
   if(strcmp("shyam",ad_user)==0){
     printf("\n\t\t\tENTER PASSWORD\n\t\t\t");
-    while((p=getch())!=13){
+    while(p!=13){
+          int a=0;
           ad_pass[a++]=p;
           printf("%c",'*');
         }
@@ -82,7 +81,7 @@ void insect_route()
 	}
 	printf("\n");
 	fclose(log);
-  getch();
+  //getch();
 	system("cls");
 }
 void travel_histroy(){
@@ -101,6 +100,5 @@ void travel_histroy(){
    		printf("%c",m);
 	}
 	fclose(fp);
-  getch();
   system("cls");
 }

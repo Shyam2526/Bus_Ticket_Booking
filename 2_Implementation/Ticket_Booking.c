@@ -1,4 +1,3 @@
-#include<conio.h>
 #include<stdio.h>
 #include<string.h>
 #include<stdlib.h>
@@ -22,16 +21,16 @@ return 0;
 }
 void call(){
   XY:
-printf("\n\n\n\t\t\t1. LOGIN\n\t\t\t2. REGISTER\n\t\t\t3. ADMIN\n\t\t\t4. Exit");
+printf("\n\n\n\t\t\t1. REGISTER\n\t\t\t2. LOGIN\n\t\t\t3. ADMIN\n\t\t\t4. Exit");
 printf("\n\n\n\t\t\tENTER YOUR CHOICE: ");
 scanf("%d",&n);
 switch(n)
   {
     case 1: 
-        login();
+        registers();
         break;
     case 2: 
-        reg();
+        login();
         break;
     case 3:
         admin();
@@ -40,11 +39,9 @@ switch(n)
         exit(0);
         break;
     default: printf("\n\n\t\t\t\tNO MATCH FOUND");
-        printf("\n\n\t\t\tPress Enter to re-Enter the choice");
-        if(getch()==13)
         goto XY;
   }
- do{	
+ do{	system("cls");  
 printf("\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n\t\t\tBus Ticket booking\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
 printf("\n\t\t\tEnter >1< To Book Ticket");
   printf("\n\t\t\tEnter >2< To View All Route");
@@ -59,7 +56,7 @@ printf("\n\t\t\tEnter >1< To Book Ticket");
     		viewAll_route();
    		  break;		
     case 0:
-    		main();
+    		call();
     		break;
     default:
     		printf("\n\t\tWrong choice !");
@@ -84,7 +81,6 @@ void viewAll_route()
     	printf("%c",u);
   }
   fclose(fp);
-  getch();
   system("cls");
 }
 void ticket_booking(){

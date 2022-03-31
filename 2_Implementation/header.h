@@ -1,5 +1,5 @@
-void login(void);
-void reg(void);
+void login();
+void registers();
 void ticket_booking();
 void viewAll_route();
 void travel_histroy();
@@ -9,4 +9,5 @@ int seater();
 int sleeper();
 void admin();
 void call();
+void buses();
 char ad_user[20], ad_pass[20];

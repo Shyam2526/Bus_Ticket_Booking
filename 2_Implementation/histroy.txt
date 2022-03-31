@@ -92,3 +92,12 @@ PRICE PER TICKET ::0
 Seat Number :: 4
 Seat Number :: 5
 Seat Number :: 6
+
+NAME ::ashiq
+MOBILE_NUMBER ::9314564458
+TOTAL_SEAT ::2
+TOTAL_AMOUONT ::300
+BUS CODE ::15
+PRICE PER TICKET ::50
+Seat Number :: 1
+Seat Number :: 0
