@@ -92,6 +92,7 @@ PRICE PER TICKET ::0
 Seat Number :: 4
 Seat Number :: 5
 Seat Number :: 6
+<<<<<<< HEAD
 
 NAME ::ashiq
 MOBILE_NUMBER ::9314564458
@@ -101,3 +102,5 @@ BUS CODE ::15
 PRICE PER TICKET ::50
 Seat Number :: 1
 Seat Number :: 0
+=======
+>>>>>>> f2e73cbd0d2868887541c2fdc01b2cb4cdc2687a

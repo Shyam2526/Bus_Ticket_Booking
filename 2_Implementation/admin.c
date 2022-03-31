@@ -3,11 +3,19 @@
 #include<string.h>
 #include "header.h"
 struct bus{
+<<<<<<< HEAD
   char code[20];
   char pp[20];
   char des[20];
   int cost;
   int seat_no[20];
+=======
+  char code[21];
+  char pp[21];
+  char des[21];
+  int cost;
+  int seat_no[30];
+>>>>>>> f2e73cbd0d2868887541c2fdc01b2cb4cdc2687a
   int total_seat;
 }bu;
 char p,m;
