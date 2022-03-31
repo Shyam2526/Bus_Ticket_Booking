@@ -50,16 +50,6 @@ switch(n)
     default: printf("\n\n\t\t\t\tNO MATCH FOUND");
         goto XY;
   }
- do{	system("cls");  
-printf("\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n\t\t\tBus Ticket booking\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
-printf("\n\t\t\tEnter >1< To Book Ticket");
-  printf("\n\t\t\tEnter >2< To View All Route");
-  printf("\n\t\t\tEnter >0< Go To Main Menu");
-  printf("\n\t\t\tEnter your Choice ::");
-    default: printf("\n\n\t\t\t\tNO MATCH FOUND\n\n\t\t\tPress Enter to re-Enter the choice");
-        if(getch()==13)
-        	goto XY;
-  }
  do{	printf("\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n\t\t\tBus Ticket booking\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
 	printf("\n\t\t\tEnter >1< To Book Ticket");
   	printf("\n\t\t\tEnter >2< To View All Route");
