@@ -7,14 +7,11 @@
 int n;
 static int count=0;
 int ch;
-<<<<<<< HEAD
 char bus_code[20];
 char name[20], mobile[10];
-=======
 char u;
 char bus_code[21];
 char name[21], mobile[11];
->>>>>>> f2e73cbd0d2868887541c2fdc01b2cb4cdc2687a
 int  total_amount=0;
 int main(void)
 {
@@ -25,7 +22,6 @@ printf("\n\t\t\t===========================");
 call();
 return 0;
 }
-<<<<<<< HEAD
 void call(){
   XY:
 printf("\n\n\n\t\t\t1. REGISTER\n\t\t\t2. LOGIN\n\t\t\t3. ADMIN\n\t\t\t4. Exit");
@@ -35,14 +31,12 @@ switch(n)
   {
     case 1: 
         registers();
-=======
 void call(){XY:
 printf("\n\n\n\t\t\t1. LOGIN\n\t\t\t2. REGISTER\n\t\t\t3. ADMIN\n\t\t\t4. Exit\n\n\n\t\t\tENTER YOUR CHOICE: ");
 scanf("%d",&n);
 switch(n)
   { case 1: 
         login();
->>>>>>> f2e73cbd0d2868887541c2fdc01b2cb4cdc2687a
         break;
     case 2: 
         login();
@@ -53,7 +47,6 @@ switch(n)
     case 4:
         exit(0);
         break;
-<<<<<<< HEAD
     default: printf("\n\n\t\t\t\tNO MATCH FOUND");
         goto XY;
   }
@@ -63,7 +56,6 @@ printf("\n\t\t\tEnter >1< To Book Ticket");
   printf("\n\t\t\tEnter >2< To View All Route");
   printf("\n\t\t\tEnter >0< Go To Main Menu");
   printf("\n\t\t\tEnter your Choice ::");
-=======
     default: printf("\n\n\t\t\t\tNO MATCH FOUND\n\n\t\t\tPress Enter to re-Enter the choice");
         if(getch()==13)
         	goto XY;
@@ -73,7 +65,6 @@ printf("\n\t\t\tEnter >1< To Book Ticket");
   	printf("\n\t\t\tEnter >2< To View All Route");
   	printf("\n\t\t\tEnter >0< Go To Main Menu");
   	printf("\n\t\t\tEnter your Choice ::");
->>>>>>> f2e73cbd0d2868887541c2fdc01b2cb4cdc2687a
    	scanf("%d",&ch); 
 	  switch(ch){
     	case 1 :
@@ -81,25 +72,19 @@ printf("\n\t\t\tEnter >1< To Book Ticket");
    		break;
 	case 2:
     		viewAll_route();
-<<<<<<< HEAD
    		  break;		
     case 0:
-=======
    		break;		
     	case 0:
->>>>>>> f2e73cbd0d2868887541c2fdc01b2cb4cdc2687a
     		call();
     		break;
     	default:
     		printf("\n\t\tWrong choice !");
     		break;
-<<<<<<< HEAD
     }   
  }while(ch!=0);
 }
-=======
     }}while(ch!=0);}
->>>>>>> f2e73cbd0d2868887541c2fdc01b2cb4cdc2687a
 void viewAll_route()
 {
   FILE *fp;
