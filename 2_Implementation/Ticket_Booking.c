@@ -9,6 +9,12 @@ static int count=0;
 int ch;
 char bus_code[20];
 char name[20], mobile[10];
+<<<<<<< HEAD
+=======
+char u;
+char bus_code[21];
+char name[21], mobile[11];
+>>>>>>> fbf4567efcfdc13dba2bd98851520acccbba817c
 int  total_amount=0;
 int main(void)
 {
@@ -27,7 +33,17 @@ scanf("%d",&n);
 switch(n)
   {
     case 1: 
+<<<<<<< HEAD
         reg();
+=======
+        registers();
+void call(){XY:
+printf("\n\n\n\t\t\t1. LOGIN\n\t\t\t2. REGISTER\n\t\t\t3. ADMIN\n\t\t\t4. Exit\n\n\n\t\t\tENTER YOUR CHOICE: ");
+scanf("%d",&n);
+switch(n)
+  { case 1: 
+        login();
+>>>>>>> fbf4567efcfdc13dba2bd98851520acccbba817c
         break;
     case 2: 
         login();
@@ -41,12 +57,20 @@ switch(n)
     default: printf("\n\n\t\t\t\tNO MATCH FOUND");
         goto XY;
   }
+<<<<<<< HEAD
  do{	system("cls");  
 printf("\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n\t\t\tBus Ticket booking\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
 printf("\n\t\t\tEnter >1< To Book Ticket");
   printf("\n\t\t\tEnter >2< To View All Route");
   printf("\n\t\t\tEnter >0< Go To Main Menu");
   printf("\n\t\t\tEnter your Choice ::");
+=======
+ do{	printf("\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n\t\t\tBus Ticket booking\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+	printf("\n\t\t\tEnter >1< To Book Ticket");
+  	printf("\n\t\t\tEnter >2< To View All Route");
+  	printf("\n\t\t\tEnter >0< Go To Main Menu");
+  	printf("\n\t\t\tEnter your Choice ::");
+>>>>>>> fbf4567efcfdc13dba2bd98851520acccbba817c
    	scanf("%d",&ch); 
 	  switch(ch){
     case 1 :
@@ -56,6 +80,11 @@ printf("\n\t\t\tEnter >1< To Book Ticket");
     		viewAll_route();
    		  break;		
     case 0:
+<<<<<<< HEAD
+=======
+   		break;		
+    	case 0:
+>>>>>>> fbf4567efcfdc13dba2bd98851520acccbba817c
     		call();
     		break;
     default:
@@ -64,6 +93,10 @@ printf("\n\t\t\tEnter >1< To Book Ticket");
     }   
  }while(ch!=0);
 }
+<<<<<<< HEAD
+=======
+    }}while(ch!=0);}
+>>>>>>> fbf4567efcfdc13dba2bd98851520acccbba817c
 void viewAll_route()
 {
   FILE *fp;
@@ -203,7 +236,6 @@ int seater(){
         goto c;
       }
       count++;
-      
     }
   }
   return bu.total_seat*bu.cost;
