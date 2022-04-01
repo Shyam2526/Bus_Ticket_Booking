@@ -8,11 +8,11 @@ static int z=0;
 int ch;
 char x;
 char c;
-char uname[21], upass[21]; 
+char uname[31], upass[21]; 
 int checku,checkp;
 struct detail
 {
-char name[20],pass[20];
+char name[31],pass[31];
 }w;
 void reg(){
   int i=0;
@@ -83,7 +83,6 @@ while( (c = fgetc(fp)) != EOF){
       //printf("%s",w.name);
       if(strcmp(w.name, id) == 0){
         return 0;
-        break;
       }
 }
 }
