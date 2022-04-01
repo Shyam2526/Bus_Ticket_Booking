@@ -19,14 +19,9 @@ void admin(){
   scanf("%20s", ad_user);
   if(strcmp("shyam",ad_user)==0){
     printf("\n\t\t\tENTER PASSWORD\n\t\t\t");
-    while(p!=13){
-          ad_pass[a++]=p;
-          printf("%c",'*');
-        }
-
+    scanf("%20s", ad_pass);
     if(strcmp("ram",ad_pass)==0){
       z:
-      system("cls");
       printf("\n\t\t\tEnter >1< To View Passengers History ");
 	    printf("\n\t\t\tEnter >2< To Insect Route");
       printf("\n\t\t\tEnter >0< Go To Main Menu");
@@ -81,12 +76,9 @@ void insect_route()
 	}
 	printf("\n");
 	fclose(log);
-  //getch();
-	system("cls");
 }
 void travel_histroy(){
 	FILE *fp;
-  system("clear");
 	fp = fopen("histroy.txt","r");
 	if(fp == NULL)
 	{
@@ -95,10 +87,8 @@ void travel_histroy(){
   }
 	else
 	{	
-		system("cls");
 		while( ( m = fgetc(fp) ) != EOF )
    		printf("%c",m);
 	}
 	fclose(fp);
-  system("cls");
 }

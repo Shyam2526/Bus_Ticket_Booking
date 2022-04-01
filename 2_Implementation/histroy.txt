@@ -104,3 +104,22 @@ Seat Number :: 1
 Seat Number :: 0
 =======
 >>>>>>> f2e73cbd0d2868887541c2fdc01b2cb4cdc2687a
+
+NAME ::yohitha
+MOBILE_NUMBER ::9632587415
+TOTAL_SEAT ::2
+TOTAL_AMOUONT ::200
+BUS CODE ::15
+PRICE PER TICKET ::50
+Seat Number :: 5
+Seat Number :: 6
+
+NAME ::karthi
+MOBILE_NUMBER ::1234567898
+TOTAL_SEAT ::3
+TOTAL_AMOUONT ::250
+BUS CODE ::15
+PRICE PER TICKET ::50
+Seat Number :: 1
+Seat Number :: 2
+Seat Number :: 3

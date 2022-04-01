@@ -7,7 +7,6 @@
 	shyamkumar 2526
 	shiva 108
 	rajasekhar 504
-<<<<<<< HEAD
-	vani 12
-=======
->>>>>>> f2e73cbd0d2868887541c2fdc01b2cb4cdc2687a
+	karthi 50
+	pradeep 108
+	kalai 11

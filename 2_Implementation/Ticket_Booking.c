@@ -34,10 +34,10 @@ printf("\n\n\n\t\t\tENTER YOUR CHOICE: ");
 scanf("%d",&n);
 switch(n)
   {
-    case 1: 
+    case 1:
         reg();
         break;
-    case 2: 
+    case 2:
         login();
         break;
     case 3:
@@ -49,27 +49,27 @@ switch(n)
     default: printf("\n\n\t\t\t\tNO MATCH FOUND");
         goto XY;
   }
- do{	system("cls");  
+ do{
 printf("\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n\t\t\tBus Ticket booking\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
-printf("\n\t\t\tEnter >1< To Book Ticket");
+  printf("\n\t\t\tEnter >1< To Book Ticket");
   printf("\n\t\t\tEnter >2< To View All Route");
   printf("\n\t\t\tEnter >0< Go To Main Menu");
   printf("\n\t\t\tEnter your Choice ::");
-   	scanf("%d",&ch); 
+   	scanf("%d",&ch);
 	  switch(ch){
     case 1 :
     		ticket_booking();
    		  break;
 		case 2:
     		viewAll_route();
-   		  break;		
+   		  break;
     case 0:
     		call();
     		break;
     default:
     		printf("\n\t\tWrong choice !");
     		break;
-    }   
+    }
  }while(ch!=0);
 }
 void viewAll_route()
@@ -83,34 +83,31 @@ void viewAll_route()
     exit(1);
   }
   else
-  {	
-    system("cls");
+  {
 	  while( ( u = fgetc(fp) ) != EOF )
     	printf("%c",u);
   }
   fclose(fp);
-  system("cls");
 }
 void ticket_booking(){
   FILE *fp=fopen("project.txt", "r");
   if(fp == NULL){
 	printf("\t\t\tfile does not found !");
     	exit(1);}
-  else{	
+  else{
     while( ( ch = fgetc(fp) ) != EOF )
    		printf("%c",ch);}
   fclose(fp);
   printf("\n\n\n\t\t For Book ticket Choice Route\n\n\t\t Enter Route code :");
   scanf("%20s",bus_code);
-	system("cls");
   fp=fopen("project.txt", "r");
   if(fp == NULL){
     printf("\t\t\tfile does not found !");
-    exit(1);} 
-  else{	
+    exit(1);}
+  else{
     while(getc(fp) != EOF){
 	    fscanf(fp,"%20s %20s %20s %d",bu.code,bu.pp,bu.des,&bu.cost);
-	    if(strcmp(bu.code,bus_code) == 0){	
+	    if(strcmp(bu.code,bus_code) == 0){
 		    printf("\n Choice Found\n\n\t\tRoute Code ::%s\n\t\tDepature Place ::%s\n\t\tArrival Place ::%s\n\t\tPrice of ticket::%d",bu.code,bu.pp,bu.des,bu.cost);
 		    break;}}}
   printf("\n\n\n* Person Deatails  *");
@@ -128,7 +125,6 @@ void ticket_booking(){
     printf("Enter Valid Mobile Number");
     goto x;}
 	fclose(fp);
-  system("cls");
   buses();
 }
 void buses(){
@@ -161,7 +157,6 @@ void buses(){
       fprintf(sfp,"Seat Number :: %d\n", bu.seat_no[k]);
     printf("\n\t\tRoutes insert Sucessfull to the Histroy file\n");
 	fclose(sfp);
-  system("cls");
 	}
 }
 int ac(){
@@ -169,7 +164,7 @@ int ac(){
   printf("\n\t\t Total number of tickets :: ");
 	scanf("%d",&bu.total_seat);
   if(bu.total_seat<=30){
-    
+
     for(int k=0; k<bu.total_seat; k++){
       printf("Seat Number :: ");
       scanf("%d", &bu.seat_no[k]);
@@ -185,7 +180,7 @@ int sleeper(){
   printf("\n\t\t Total number of tickets :: ");
 	scanf("%d",&bu.total_seat);
   if(bu.total_seat<=30){
-    
+
     for(int k=0; k<bu.total_seat; k++){
       printf("Seat Number :: ");
       scanf("%d", &bu.seat_no[k]);
@@ -202,7 +197,7 @@ int seater(){
 	scanf("%d",&bu.total_seat);
 
   if(bu.total_seat<=30){
-    
+
     for(int k=0; k<bu.total_seat; k++){
       c: printf("Seat Number :: ");
       scanf("%d", &bu.seat_no[k]);
@@ -214,47 +209,4 @@ int seater(){
     }
   }
   return bu.total_seat*bu.cost;
-}
-void FindRoute(){
-  int sh;
-  char bc[20], bc1[20];
-  char pp[20], des[20];
-  FILE *fp=fopen("project.txt", "r");
-  printf("\n\t\t1. Find By Arrival Place\n\t\t2. Find By Depature Place");
-      switch(sh){
-        case 1:
-          printf("\n\t\tENTER THE ARRIVAL PLACE\n\t\t");
-          scanf("%s", pp);
-          bc=Arrival(pp);
-          break;
-        case 2:
-          printf("\n\t\tENTER THE DEPATURE PLACE\n\t\t");
-          scanf("%s", des);
-          bc1=Depature(des);
-          break;
-        default:
-          printf("\nWrong Choice");
-      }
-      while(getc(fp) != EOF){
-	    fscanf(fp,"%20s %20s %20s %d",bu.code,bu.pp,bu.des,&bu.cost);
-      if(strcmp(bu.code, bc)==0)
-        printf("\n Choice Found\n\n\t\tRoute Code ::%s\n\t\tDepature Place ::%s\n\t\tArrival Place ::%s\n\t\tPrice of ticket::%d",bu.code,bu.pp,bu.des,bu.cost);
-		    break;
-  }
-}
-char Arrival(char *pp){
-    FILE *fp=fopen("project.txt", "r");
-    while(getc(fp) != EOF){
-	    fscanf(fp,"%20s %20s %20s %d",bu.code,bu.pp,bu.des,&bu.cost);
-      if(strcmp(bu.pp,pp)==0)
-        return *pp;
-}
-}
-char Depature(char *des){
-  FILE *fp=fopen("project.txt", "r");
-    while(getc(fp) != EOF){
-	    fscanf(fp,"%20s %20s %20s %d",bu.code,bu.pp,bu.des,&bu.cost);
-      if(strcmp(bu.des,des)==0)
-        return *des;
-}
 }

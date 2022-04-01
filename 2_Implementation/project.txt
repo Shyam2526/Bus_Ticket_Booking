@@ -13,3 +13,4 @@
 13 chennai kanniyakumari 725 
 14 poonamallee vada_palani 250 
 15 kanchipuram aavadi 50 
+16 tiruvannnamalai tirupati 520 
