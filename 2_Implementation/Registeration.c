@@ -3,12 +3,12 @@
 #include<string.h>
 #include "header.h"
 #include "unity.h"
-char checker[20],check[20]; 
+char checker[21],check[21]; 
 static int z=0;
 int ch;
 char x;
 char c;
-char uname[20], upass[20]; 
+char uname[21], upass[21]; 
 int checku,checkp;
 struct detail
 {
@@ -96,7 +96,6 @@ while( (c = fgetc(fp)) != EOF){
       if(strcmp(w.pass,pa) == 0){
         //printf("%s",w.pass);
         return 0;
-        break;
       }
 }
 }

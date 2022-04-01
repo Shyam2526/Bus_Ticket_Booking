@@ -73,10 +73,11 @@ printf("\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     }
  }while(ch!=0);
 }
+ char u;
 void viewAll_route()
 {
   FILE *fp;
-  char u;
+ 
   fp=fopen("project.txt", "r");
   if(fp == NULL)
   {

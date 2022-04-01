@@ -15,6 +15,6 @@ char Arrival(char *pp);
 char Depature(char *des);*/
 char checking(char id[]);
 char checkpass(char pa[]);
-char ad_user[20], ad_pass[20];
+char ad_user[21], ad_pass[21];
 void manual_test_checking();
 void manual_test_pass();
