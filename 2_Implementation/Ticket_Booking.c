@@ -2,28 +2,29 @@
 #include<string.h>
 #include<stdlib.h>
 #include "header.h"
+#include "unity.h"
+extern int testcode();
 struct bus{
   char code[20];
   char pp[20];
   char des[20];
   int cost;
   int seat_no[20];
-  int total_seat;
 }bu;
+int mrp;
 extern void reg();
 extern void admin();
 int n;
 static int count=0;
 int ch;
-char bus_code[21];
 char name[21], mobile[11];
 int  total_amount=0;
 int main(void)
 {
+testcode();
 printf("\n\t\t\t===========================");
 printf("\n\t\t\tWELCOME TO THE HOLIDAYS BUS");
 printf("\n\t\t\t===========================");
-//printf("\n\n\n\t\t\tPress Enter to proceed...!!");
 call();
 return 0;
 }
@@ -109,7 +110,8 @@ void ticket_booking(){
 	    fscanf(fp,"%20s %20s %20s %d",bu.code,bu.pp,bu.des,&bu.cost);
 	    if(strcmp(bu.code,bus_code) == 0){
 		    printf("\n Choice Found\n\n\t\tRoute Code ::%s\n\t\tDepature Place ::%s\n\t\tArrival Place ::%s\n\t\tPrice of ticket::%d",bu.code,bu.pp,bu.des,bu.cost);
-		    break;}}}
+		    bu.cost=mrp;
+        break;}}}
   printf("\n\n\n* Person Deatails  *");
 	printf("\n\t\t your name :");
 	scanf("%20s",name);
@@ -130,19 +132,22 @@ void ticket_booking(){
 void buses(){
 	int sr;
 	FILE *sfp;
+  printf("\nAVALIABLE SEATS ::%d", 30-count);
+  printf("\n\t\t Total number of tickets :: ");
+	scanf("%d",&total_seat);
   printf("\n\t\t<1>\tAC BUS");
   printf("\n\t\t<2>\tSLEEPER COACH");
   printf("\n\t\t<3>\tSEATER\n\t\tENTER YOUR CHOICE :: ");
   scanf("%d", &sr);
   switch(sr){
     case 1:
-      total_amount = ac();
+      total_amount = ac(total_seat,bus_code,mrp);
       break;
     case 2:
-      total_amount = sleeper();
+      total_amount = sleeper(total_seat, bus_code,mrp);
       break;
     case 3:
-      total_amount = seater();
+      total_amount = seater(total_seat, bus_code,mrp);
       break;
     default:
       printf("\n\t\tWRONG OPTION");
@@ -152,20 +157,16 @@ void buses(){
   if(sfp == NULL){
 		printf("FIle not Found");}
 	else{
-		fprintf(sfp,"\nNAME ::%s\nMOBILE_NUMBER ::%s\nTOTAL_SEAT ::%d\nTOTAL_AMOUONT ::%d\nBUS CODE ::%s\nPRICE PER TICKET ::%d\n",name,mobile,bu.total_seat,total_amount,bu.code, bu.cost);
-		for(int k=0; k<bu.total_seat; k++)
+		fprintf(sfp,"\nNAME ::%s\nMOBILE_NUMBER ::%s\nTOTAL_SEAT ::%d\nTOTAL_AMOUONT ::%d\nBUS CODE ::%s\nPRICE PER TICKET ::%d\n",name,mobile,total_seat,total_amount,bu.code, bu.cost);
+		for(int k=0; k<total_seat; k++)
       fprintf(sfp,"Seat Number :: %d\n", bu.seat_no[k]);
     printf("\n\t\tRoutes insert Sucessfull to the Histroy file\n");
 	fclose(sfp);
 	}
 }
-int ac(){
-  printf("\nAVALIABLE SEATS ::%d", 30-count);
-  printf("\n\t\t Total number of tickets :: ");
-	scanf("%d",&bu.total_seat);
-  if(bu.total_seat<=30){
-
-    for(int k=0; k<bu.total_seat; k++){
+int ac(int total_seat, char bus_code[],int mrp){
+  if(total_seat<=30){
+    for(int k=0; k<total_seat; k++){
       printf("Seat Number :: ");
       scanf("%d", &bu.seat_no[k]);
       if(bu.seat_no[k]>30)
@@ -173,15 +174,16 @@ int ac(){
       count++;
     }
   }
-  return bu.total_seat*bu.cost + 200;
+  else{
+    return -1;
+  }
+  bu.cost=mrp;
+  return total_seat*mrp + 200;
 }
-int sleeper(){
-  printf("\nAVALIABLE SEATS ::%d", 30-count);
-  printf("\n\t\t Total number of tickets :: ");
-	scanf("%d",&bu.total_seat);
-  if(bu.total_seat<=30){
+int sleeper(int total_seat, char bus_code[],int mrp){
+  if(total_seat<=30){
 
-    for(int k=0; k<bu.total_seat; k++){
+    for(int k=0; k<total_seat; k++){
       printf("Seat Number :: ");
       scanf("%d", &bu.seat_no[k]);
       if(bu.seat_no[k]>30)
@@ -189,16 +191,12 @@ int sleeper(){
       count++;
     }
   }
-  return bu.total_seat*bu.cost + 100;
+  return total_seat*mrp + 100;
 }
-int seater(){
-  printf("\nAVALIABLE SEATS ::%d", 30-count);
-  printf("\n\t\t Total number of tickets :: ");
-	scanf("%d",&bu.total_seat);
+int seater(int total_seat, char bus_code[],int mrp){
+  if(total_seat<=30){
 
-  if(bu.total_seat<=30){
-
-    for(int k=0; k<bu.total_seat; k++){
+    for(int k=0; k<total_seat; k++){
       c: printf("Seat Number :: ");
       scanf("%d", &bu.seat_no[k]);
       if(bu.seat_no[k]>30){
@@ -208,5 +206,6 @@ int seater(){
       count++;
     }
   }
-  return bu.total_seat*bu.cost;
+  bu.cost=mrp;
+  return total_seat*mrp;
 }

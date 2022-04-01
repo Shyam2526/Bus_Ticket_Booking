@@ -2,6 +2,7 @@
 #include<stdlib.h>
 #include<string.h>
 #include "header.h"
+#include "unity.h"
 char checker[20],check[20]; 
 static int z=0;
 int ch;
@@ -33,17 +34,8 @@ void reg(){
       scanf("%20s",checker);
       printf("\n\n\t\t\t\t  DESIRED PASSWORD: ");
       scanf("%20s",check);
-      while(!feof(fp) ){ 
-        if(strcmp(checker,w.name) == 0){
-          printf("\n\n\t\t\tUSERNAME ALREDY EXISTS");
-          reg();
-        }
-        else{
-          strcpy(w.name,checker);
-          strcpy(w.pass, check);
-          break;
-        }
-      }
+      strcpy(w.name,checker);
+      strcpy(w.pass, check);      
       fprintf(fp,"\t%s %s\n", w.name, w.pass);
       fclose(fp);
       printf("\n\t\t\tSUCCESSFULLY REGISTERED");
@@ -66,7 +58,7 @@ void login(){
     scanf("%20s",upass);
     checku=checking(uname);
     checkp=checkpass(upass);
-    printf("%d %d",checku,checkp);
+    //printf("%d %d",checku,checkp);
     }
 if(checku==0 && checkp==0){
   printf("\n\n\n\t\t\t\tYOU HAVE LOGGED IN SUCCESSFULLY!!");
@@ -79,14 +71,13 @@ else if(checku==0&&checkp!=0){
 }
 else if(checku!=0){
   printf("\n\n\n\t\t\tYou are not a Registered User\n \t\t\tPress enter to register yourself");
-  //if(getch()==13)
     reg();
 }
 }
 char checking(char id[]){
   FILE *fp;
   fp=fopen("Web_reg.txt", "r+");
-  printf("%s",id);
+  //printf("%s",id);
 while( (c = fgetc(fp)) != EOF){
       fscanf(fp,"%30s %30s",w.name,w.pass);
       //printf("%s",w.name);
@@ -94,9 +85,6 @@ while( (c = fgetc(fp)) != EOF){
         return 0;
         break;
       }
-      /*else
-        return 1;*/
-      
 }
 }
 char checkpass(char pa[]){
@@ -106,11 +94,9 @@ while( (c = fgetc(fp)) != EOF){
       fscanf(fp,"%30s %30s",w.name, w.pass);
       //printf("%s",w.pass);
       if(strcmp(w.pass,pa) == 0){
-        printf("%s",w.pass);
+        //printf("%s",w.pass);
         return 0;
-        //break;
+        break;
       }
-      /*else
-        return 1;      */
 }
 }
