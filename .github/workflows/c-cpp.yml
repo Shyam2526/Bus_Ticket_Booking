@@ -1,4 +1,4 @@
-name: Build CI - windows
+name: Build CI - Linux
 
 on:
   push:
@@ -14,4 +14,4 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Build
-      run: make -gcc Ticket_Booking.c Registeration.c admin.c header.h unity_internals.h unity.h unit_testing.c unity.c 
+      run: make -C 3_Implementation_version_1
