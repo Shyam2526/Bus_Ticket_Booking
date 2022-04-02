@@ -37,7 +37,7 @@
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/b258b90529834e13be4eaa38b5c96d60)](https://app.codacy.com/gh/Shyam2526/M1_Bus_Ticket_Booking/dashboard)
 
 * Codiga - Static Analysis
-[![Quality](https://api.codiga.io/project/32077/score/svg)](https://app.codiga.io/project/32222/dashboard)
+[![Quality](https://api.codiga.io/project/32077/score/svg)](https://app.codiga.io/public/user/github/Shyam2526)
 
 * Build on Linux - Passed [![Build CI - Linux](https://github.com/Shyam2526/M1_Bus_Ticket_Booking/actions/workflows/c-cpp.yml/badge.svg)](https://github.com/Shyam2526/M1_Bus_Ticket_Booking/actions/workflows/c-cpp.yml)
 * cpp-check - Passed [![Analysis](https://github.com/Shyam2526/M1_Bus_Ticket_Booking/actions/workflows/analysis.yml/badge.svg)](https://github.com/Shyam2526/M1_Bus_Ticket_Booking/actions/workflows/analysis.yml)
