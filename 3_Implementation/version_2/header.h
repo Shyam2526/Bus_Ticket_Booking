@@ -1,0 +1,15 @@
+void login(void);
+void ticket_booking();
+void viewAll_route();
+void travel_histroy();
+void insect_route();
+int ac(int total_seat,char bus_code[], int mrp);
+int seater(int total_seat,char bus_code[], int mrp);
+int sleeper(int total_seat, char bus_code[],int mrp);
+void call();
+void buses();
+char bus_code[21];
+ int total_seat;
+char checking(char id[]);
+char checkpass(char pa[]);
+char ad_user[21], ad_pass[21];
