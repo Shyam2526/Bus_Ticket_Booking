@@ -9,9 +9,9 @@ on:
 jobs:
   build:
 
-    runs-on: windows
+    runs-on: ubuntu latest
 
     steps:
     - uses: actions/checkout@v3
     - name: Build
-      run: make -c/
+      run: make -gcc Ticket_Booking.c Registeration.c admin.c header.h unity_internals.h unity.h unit_testing.c unity.c 
