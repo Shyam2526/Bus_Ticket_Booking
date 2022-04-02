@@ -2,9 +2,9 @@
 #include "unity.h"
 void manual_test_checking(){
     if(checking("shyam")==0)
-        printf("\nFunctions Work\n");
+        printf("\nUSERNAME Works\n");
     else
-        printf("\nFunctions Not Work\n");
+        printf("\nUSERNAME Not Works\n");
     if(checking("sssss")==0)
         printf("\nFunctions Work\n");
     else
@@ -12,39 +12,41 @@ void manual_test_checking(){
 }
 void manual_test_pass(){
     if(checkpass("26")==0)
-        printf("\nFunctions Work\n");
+        printf("\nPASSWORD Work\n");
     else
-        printf("\nFunctions Not Work\n");
-    if(checkpass("25")==0)
-        printf("\nFunctions Work\n");
+        printf("\nPASSWORD Not Work\n");
+    if(checkpass("1111")==0)
+        printf("\nPASSWORD Work\n");
     else
-        printf("\nFunctions Not Work\n");
-    if(checkpass("1111")==1)
-        printf("\nFunctions Work\n");
-    else
-        printf("\nFunctions Not Work\n");
+        printf("\nPASSWORD Not Work\n");
 }
 void manual_test_login(){
     if(checking("shyam")==0 && checkpass("26")==0){
-        printf("\nLOGIN FUNCTION WORKS\n");
+        printf("\nLOGIN WITH CHAR and NUM\n");
     }
     else{
         printf("\nLOGIN FUNCTION FAILED\n");
     }
     if(checking("shyam")==0 && checkpass("14")==0){
-        printf("\nLOGIN FUNCTION WORKS FOR SAME USERNAME\n");
+        printf("\nLOGIN WITH SAME USERNAME DIFFERENT PASS\n");
+    }
+    else{
+        printf("\nLOGIN FUNCTION FAILED\n");
+    }
+    if(checking("110")==0 && checkpass("shyam")==0){
+        printf("\nLOGIN WITH NUM and CHAR\n");
     }
     else{
         printf("\nLOGIN FUNCTION FAILED\n");
     }
     if(checking("rohit")==0 && checkpass("sharma")==0){
-        printf("\nPASSWORD WITH NAME\n");
+        printf("\nLOGIN WITH BOTH CHAR\n");
     }
     else{
         printf("\nLOGIN FUNCTION FAILED\n");
     }
-    if(checking("IPL")==0 && checkpass("shyam25")==0){
-        printf("\nPASSWORD WITH NAME\n");
+    if(checking("6379")==0 && checkpass("93613")==0){
+        printf("\nLOGIN WITH BOTH NUM\n");
     }
     else{
         printf("\nLOGIN FUNCTION FAILED\n");

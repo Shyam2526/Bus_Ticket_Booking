@@ -83,7 +83,7 @@ while( (c = fgetc(fp)) != EOF){
       //printf("%s",w.name);
       if(strcmp(w.name, id) == 0){
         return 0;
-        break;
+        //break;
       }
 }
 }
@@ -96,7 +96,7 @@ while( (c = fgetc(fp)) != EOF){
       if(strcmp(w.pass,pa) == 0){
         //printf("%s",w.pass);
         return 0;
-        break;
       }
+      //break;
 }
 }
