@@ -1,6 +1,6 @@
 #include "header.h"
 #include "unity.h"
-#include "manual.c"
+//#include "manual.c"
 //extern int shyam(int a, char b[], int c);
 extern void manual_test();
 void setUp(void)

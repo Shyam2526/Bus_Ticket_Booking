@@ -10,11 +10,9 @@ void call();
 void buses();
 char bus_code[21];
  int total_seat;
-/*void FindRoute();
-char Arrival(char *pp);
-char Depature(char *des);*/
 char checking(char id[]);
 char checkpass(char pa[]);
 char ad_user[21], ad_pass[21];
 void manual_test_checking();
 void manual_test_pass();
+void manual_test_login();
