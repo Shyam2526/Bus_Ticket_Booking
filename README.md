@@ -40,6 +40,7 @@
 [![Quality](https://api.codiga.io/project/32077/score/svg)](https://app.codiga.io/project/32222/dashboard)
 
 * Build on Linux - Passed [![Build CI - Linux](https://github.com/Shyam2526/M1_Bus_Ticket_Booking/actions/workflows/c-cpp.yml/badge.svg)](https://github.com/Shyam2526/M1_Bus_Ticket_Booking/actions/workflows/c-cpp.yml)
+* cpp-check - Passed [![Analysis](https://github.com/Shyam2526/M1_Bus_Ticket_Booking/actions/workflows/analysis.yml/badge.svg)](https://github.com/Shyam2526/M1_Bus_Ticket_Booking/actions/workflows/analysis.yml)
 ## Support
 
 For support, shyamakumar4516@gmail.com or For any issue comment below my project in __GITHUB__.
