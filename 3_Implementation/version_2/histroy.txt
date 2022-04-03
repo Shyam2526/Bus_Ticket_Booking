@@ -196,3 +196,25 @@ BUS CODE ::17
 PRICE PER TICKET ::520
 Seat Number :: 5
 Seat Number :: 6
+
+NAME ::SHYAMKUMAR
+MOBILE_NUMBER ::9632587414
+TOTAL_SEAT ::5
+TOTAL_AMOUONT ::200
+BUS CODE ::10
+PRICE PER TICKET ::0
+Seat Number :: 10
+Seat Number :: 11
+Seat Number :: 12
+Seat Number :: 13
+Seat Number :: 14
+
+NAME ::RAMKUMAR
+MOBILE_NUMBER ::6379480839
+TOTAL_SEAT ::3
+TOTAL_AMOUONT ::100
+BUS CODE ::15
+PRICE PER TICKET ::0
+Seat Number :: 2
+Seat Number :: 3
+Seat Number :: 4

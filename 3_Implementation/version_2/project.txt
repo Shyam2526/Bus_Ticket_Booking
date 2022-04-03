@@ -15,3 +15,5 @@
 15 kanchipuram aavadi 50 
 16 tiruvannnamalai tirupati 520 
 17 rajashthan mumbai 520 
+20 kanchipuram mysore 755 
+19 chennai hydrabhath 800 
