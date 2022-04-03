@@ -140,6 +140,7 @@ void buses(){
   printf("\n\t\t<2>\tSLEEPER COACH");
   printf("\n\t\t<3>\tSEATER\n\t\tENTER YOUR CHOICE :: ");
   scanf("%d", &sr);
+  mrp=bu.cost;
   switch(sr){
     case 1:
       total_amount = ac(total_seat,bus_code,mrp);

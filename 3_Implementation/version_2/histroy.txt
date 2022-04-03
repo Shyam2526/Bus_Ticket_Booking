@@ -218,3 +218,21 @@ PRICE PER TICKET ::0
 Seat Number :: 2
 Seat Number :: 3
 Seat Number :: 4
+
+NAME ::github
+MOBILE_NUMBER ::7418529635
+TOTAL_SEAT ::2
+TOTAL_AMOUONT ::200
+BUS CODE ::20
+PRICE PER TICKET ::0
+Seat Number :: 1
+Seat Number :: 1
+
+NAME ::pollard
+MOBILE_NUMBER ::8529637412
+TOTAL_SEAT ::2
+TOTAL_AMOUONT ::600
+BUS CODE ::1
+PRICE PER TICKET ::200
+Seat Number :: 1
+Seat Number :: 2
