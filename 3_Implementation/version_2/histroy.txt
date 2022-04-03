@@ -187,3 +187,12 @@ PRICE PER TICKET ::0
 Seat Number :: 1
 Seat Number :: 2
 Seat Number :: 3
+
+NAME ::madan
+MOBILE_NUMBER ::7894561232
+TOTAL_SEAT ::2
+TOTAL_AMOUONT ::100
+BUS CODE ::17
+PRICE PER TICKET ::520
+Seat Number :: 5
+Seat Number :: 6

@@ -21,7 +21,7 @@ char name[21], mobile[11];
 int  total_amount=0;
 int main(void)
 {
-//testcode();
+testcode();
 printf("\n\t\t\t===========================");
 printf("\n\t\t\tWELCOME TO THE HOLIDAYS BUS");
 printf("\n\t\t\t===========================");
