@@ -14,6 +14,6 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: build
-      run:  gcc C:\Users\shyam\OneDrive\Documents\GitHub\Bus_Ticket_Booking\3_Implementation\version_2
+      run:  gcc C:\Users\shyam\OneDrive\Documents\GitHub\Bus_Ticket_Booking\3_Implementation\version_2\Ticket_Booking.c Ticket_Booking.exe
     - name: Run
       run: Ticket_Booking.exe
