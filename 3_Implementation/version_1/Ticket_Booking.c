@@ -111,7 +111,7 @@ void ticket_booking(){
 	    fscanf(fp,"%20s %20s %20s %d",bu.code,bu.pp,bu.des,&bu.cost);
 	    if(strcmp(bu.code,bus_code) == 0){
 		    printf("\n Choice Found\n\n\t\tRoute Code ::%s\n\t\tDepature Place ::%s\n\t\tArrival Place ::%s\n\t\tPrice of ticket::%d",bu.code,bu.pp,bu.des,bu.cost);
-		    bu.cost=mrp;
+		    mrp=bu.cost;
         break;}}}
   printf("\n\n\n* Person Deatails  *");
 	printf("\n\t\t your name :");
